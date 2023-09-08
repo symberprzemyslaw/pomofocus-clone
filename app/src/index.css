@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  background-color: rgb(186, 73, 73);
+  min-height: 100vh;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+nav {
+  display: flex;
+}
+
+.display {
+  background-color:  rgb(185, 91, 91);
+}
