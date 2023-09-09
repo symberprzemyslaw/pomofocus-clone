@@ -1,33 +1,52 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import  Counter  from "./Counter"
+import ring from './assets/ring.mp3'
 
 const Display = () => {
-    const [time, setTime] = useState('25:00')
+    const [time, setTime] = useState(2)
     const [action, setAction] = useState('Start')
     const [count, setCount] = useState('#0')
     const container = document.querySelector(".container")
+    const play = () => new Audio(ring).play()
+    console.log(container)
 
 
     const handleTime = () => {
-        
-        let seconds = 150000 // miliseconds
-        let minutes = 25
-        console.log(seconds - 1000)
-        setInterval(console.log(seconds - 1000), 1000)
+        // divide by 60 seconds + remaider
+        if( action === 'Start'){
+            setAction('Pause')
+        } else {
+            setAction('Start')
+        }
+
+        // if(time !== 0) {
+        //     useEffect( () => {
+
+        //         setInterval( () => {
+        //             setTime(time - 1)
+        //         },1000)
+                
+        //     },[time]
+        //     )
+        // }
     }
-    handleTime()
     return ( 
         <div className="display">
             <button onClick={ () => {
                 container.style.backgroundColor = "rgb(186, 73, 73)"
+                //setTime(25)
             }}>Pomodoro</button>
             <button onClick={ () => {
                 container.style.backgroundColor = "rgb(56, 133, 138)"
+                //setTime(5)
             }}>Short Break</button>
             <button onClick={ () => {
                 container.style.backgroundColor = "rgb(57, 112, 151)"
+                //setTime(15)
             }}>Long Break</button>
+            <Counter time={time} play={play}/>
             <div className="timer">{time}</div>
-            <button>{action}</button>
+            <button onClick={handleTime}>{action}</button>
             <div className="count">
                 {count}
             </div>
