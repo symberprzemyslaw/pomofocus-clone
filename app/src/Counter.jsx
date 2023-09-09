@@ -1,18 +1,22 @@
 import  { useState, useEffect } from 'react';
   
-const Counter = ({time, play}) => {
-    const [count, setCount] = useState(time * 60);
-    const formattedNum = num => {
-        num > 10 ? num : '0' + num
-    }
+const Counter = ({play, time, setTime}) => {
+    let minutes = Math.floor(time / 60).toLocaleString('en-US', {
+        minimumIntegerDigits : 2,
+        useGrouping : false
+    }) 
+    let seconds = Math.floor(time % 60).toLocaleString('en-US', {
+        minimumIntegerDigits : 2,
+        useGrouping : false
+    }) 
   
     useEffect(() => { // przeniesienie tej funkcji do display? uzycie false/true do naliczania
   
-        if(count !== 0){
+        if(time !== 0){
         //Implementing the setInterval method
         const interval = setInterval(() => {
 
-                setCount(count - 1);
+                setTime(time - 1);
                 console.log('hi')
             }, 1000);
             return () => clearInterval(interval);
@@ -21,9 +25,9 @@ const Counter = ({time, play}) => {
         }
   
         //Clearing the interval
-    }, [count]);
+    }, [time]);
     // must add some number formating
-    return <h1>{Math.floor(count / 60) } : {(count % 60) }</h1>;
+    return <h1>{minutes} : {seconds}</h1>;
 }
 
 

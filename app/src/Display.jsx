@@ -3,7 +3,7 @@ import  Counter  from "./Counter"
 import ring from './assets/ring.mp3'
 
 const Display = () => {
-    const [time, setTime] = useState(2)
+    const [time, setTime] = useState((2 * 60))
     const [action, setAction] = useState('Start')
     const [count, setCount] = useState('#0')
     const container = document.querySelector(".container")
@@ -34,17 +34,17 @@ const Display = () => {
         <div className="display">
             <button onClick={ () => {
                 container.style.backgroundColor = "rgb(186, 73, 73)"
-                //setTime(25)
+                setTime(25 * 60)
             }}>Pomodoro</button>
             <button onClick={ () => {
                 container.style.backgroundColor = "rgb(56, 133, 138)"
-                //setTime(5)
+                setTime(5 * 60)
             }}>Short Break</button>
             <button onClick={ () => {
                 container.style.backgroundColor = "rgb(57, 112, 151)"
-                //setTime(15)
+                setTime(15 * 60)
             }}>Long Break</button>
-            <Counter time={time} play={play}/>
+            <Counter time={time} setTime={setTime} play={play}/>
             <div className="timer">{time}</div>
             <button onClick={handleTime}>{action}</button>
             <div className="count">
