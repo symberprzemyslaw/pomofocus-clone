@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 .container {
   background-color: rgb(186, 73, 73);
   min-height: 100vh;
@@ -13,6 +14,13 @@
   flex-direction: column;
   align-items: center;
 
+  text-align: center;
+  font-family: 'Quicksand', sans-serif;
+
+}
+
+.container * {
+  margin: 5px;
 }
 
 nav {
