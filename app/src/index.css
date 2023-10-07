@@ -5,6 +5,7 @@
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
 .container {
   background-color: rgb(186, 73, 73);
   min-height: 100vh;
@@ -25,6 +26,10 @@
 
 nav {
   display: flex;
+}
+
+.logo{
+  height: 25px;
 }
 
 .display {

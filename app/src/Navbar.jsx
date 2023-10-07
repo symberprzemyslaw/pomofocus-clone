@@ -2,6 +2,7 @@ const Navbar = () => {
     return ( 
         <>
         <nav>
+            <img src="./src/assets/icon-white2.png" className="logo"></img>
             <h2>Pomofocus</h2>
             <button>Report</button>
             <button>Setting</button>

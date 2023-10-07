@@ -20,6 +20,8 @@ const Counter = ({ time, setTime, counting }) => {
     }
   }, [time, counting]);
 
+  //Showing time in title
+  document.title = minutes + ":" + seconds
   return <h1 className='timer'>{minutes} : {seconds}</h1>;
 };
 
