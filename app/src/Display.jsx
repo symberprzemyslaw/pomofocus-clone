@@ -28,13 +28,12 @@ const Display = () => {
 
   useEffect(() => {
     if (time === 0 && isPomodoroSet) {
+      play()
       setCount((prevCount) => prevCount + 1);
       reset();
+    } else if (time === 0) {
       play()
-    }
-    if (time === 0) {
       reset()
-      play()
     }
   }, [time]);
   return (
