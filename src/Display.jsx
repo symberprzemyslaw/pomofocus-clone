@@ -11,6 +11,11 @@ const Display = () => {
 
   const container = document.querySelector(".container");
   const play = () => new Audio(ring).play();
+
+  //the main screen should return to pomodoro
+  //and after pomodoro should return to short brake
+  //if pomodoro counter is @ 2 === 0 it should return to long brake
+  
   const reset = () => {
     setCounting(false);
     setAction('Start');
