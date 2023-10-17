@@ -26,12 +26,68 @@
 
 nav {
   display: flex;
+  justify-content: space-between;
+  width: 620px;
 }
 
+
 .logo{
+  display: flex;
+}
+
+.logo img {
   height: 25px;
 }
 
 .display {
   background-color:  rgba(255, 255, 255, 0.377);
+  padding: 1em;
+  width: 480px;
+  border-radius: 5px;
+}
+
+button {
+  background-color:  rgba(255, 255, 255, 0.377);
+  border: none;
+  padding: 0.3em 1em;
+  border-radius: 5px;
+  color: white;
+}
+button:hover {
+  cursor: pointer;
+}
+
+.percantage {
+  height: 1px;
+  width: 620px;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+}
+.fill {
+  border-radius: 3px;
+  margin: 0;
+  background-color: white;
+  height: 3px;
+  width: 100%;
+}
+
+.timer {
+  font-size: 90px;
+}
+
+.start-btn {
+	cursor: pointer;
+	border: medium;
+	margin: 20px 0px 0px;
+	padding: 0px 12px;
+	border-radius: 4px;
+	box-shadow: rgb(235, 235, 235) 0px 6px 0px;
+	font-size: 22px;
+	height: 55px;
+	color: rgb(186, 73, 73);
+	font-weight: bold;
+	width: 200px;
+	background-color: white;
+	transition: color 0.5s ease-in-out 0s;
+  letter-spacing: 2px;
 }
