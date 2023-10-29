@@ -75,8 +75,10 @@ const Display = () => {
       <Counter play={play} time={time} setTime={setTime} counting={counting} />
       <button onClick={handleTime} className="start-btn">{action}</button>
       <div className="count">
+        <p>
         #{count}
-        <button onClick={() => setCount(0)}>Reset count</button>
+        </p>
+        <button className="reset-btn" onClick={() => setCount(0)}>Reset count</button>
       </div>
     </div>
     </>
