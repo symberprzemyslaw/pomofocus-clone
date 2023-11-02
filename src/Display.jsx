@@ -57,26 +57,26 @@ const Display = () => {
       <button onClick={() => {
         container.style.backgroundColor = "rgb(186, 73, 73)";
         startBtn.style.color = "rgb(186, 73, 73)";
-        setTime(25 * 60);
+        setTime(0.1 * 60);
         setPomodoro(true)
       }}>Pomodoro</button>
       <button onClick={() => {
         container.style.backgroundColor = "rgb(56, 133, 138)";
         startBtn.style.color = "rgb(56, 133, 138)";
-        setTime(5 * 60);
+        setTime(0.1 * 60);
         setPomodoro(false)
       }}>Short Break</button>
       <button onClick={() => {
         container.style.backgroundColor = "rgb(57, 112, 151)";
         startBtn.style.color = "rgb(57, 112, 151)";
-        setTime(15 * 60);
+        setTime(0.1 * 60);
         setPomodoro(false)
       }}>Long Break</button>
       <Counter play={play} time={time} setTime={setTime} counting={counting} />
       <button onClick={handleTime} className="start-btn">{action}</button>
       <div className="count">
         <p>
-        #{count}
+        # {count}
         </p>
         <button className="reset-btn" onClick={() => setCount(0)}>Reset count</button>
       </div>
