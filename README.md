@@ -1,1 +1,1 @@
-# Pomofocys clone
+# Pomofocus clone
