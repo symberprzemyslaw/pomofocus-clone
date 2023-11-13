@@ -1,4 +1,5 @@
 # Pomofocus clone
 
-![obraz](https://github.com/symberprzemyslaw/pomofocus-clone/assets/133598781/b14197bb-61de-407f-852e-aa3d4791a1a6)
+![obraz](https://github.com/symberprzemyslaw/pomofocus-clone/assets/133598781/4d14721c-7b04-4232-b248-8639e2ec186b)
+
 
