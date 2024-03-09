@@ -8,7 +8,7 @@ const Display = () => {
   const [count, setCount] = useState(0);
   const [counting, setCounting] = useState(false);
   const [isPomodoroSet, setPomodoro] = useState(true);
-  const [fill, setFill] = useState(0)
+   // const [fill, setFill] = useState(0)
 
   const container = document.querySelector(".container");
   const startBtn = document.querySelector(".start-btn")
@@ -34,6 +34,25 @@ const Display = () => {
 
     setCounting((prevCounting) => !prevCounting);
   };
+  //this function will handle the time for the pomodoro, short brake and long brake
+  const handleButton = (time, pomodoro, action, color) => {
+    setTime(time * 60);
+    setPomodoro(pomodoro)
+    setCounting(false)
+    setAction(action)
+    if (color === 'red'){
+      container.style.backgroundColor = "rgb(186, 73, 73)";
+      startBtn.style.color = "rgb(186, 73, 73)";
+    }
+    if (color === 'green'){
+      container.style.backgroundColor = "rgb(56, 133, 138)";
+      startBtn.style.color = "rgb(56, 133, 138)";
+    }
+    if (color === 'blue'){
+      container.style.backgroundColor = "rgb(57, 112, 151)";
+      startBtn.style.color = "rgb(57, 112, 151)";
+    }
+  }
 
   useEffect(() => {
     if (time === 0 && isPomodoroSet) {
@@ -54,24 +73,19 @@ const Display = () => {
     </div>
 
     <div className="display">
+        {/* Pomodoro timer setting */}
       <button onClick={() => {
-        container.style.backgroundColor = "rgb(186, 73, 73)";
-        startBtn.style.color = "rgb(186, 73, 73)";
-        setTime(0.1 * 60);
-        setPomodoro(true)
+        handleButton(25, true, 'START', 'red')
       }}>Pomodoro</button>
+        {/* Short break timer setting */}
       <button onClick={() => {
-        container.style.backgroundColor = "rgb(56, 133, 138)";
-        startBtn.style.color = "rgb(56, 133, 138)";
-        setTime(0.1 * 60);
-        setPomodoro(false)
+        handleButton(5, false, 'START', 'green')
       }}>Short Break</button>
+        {/* Long break timer setting */}
       <button onClick={() => {
-        container.style.backgroundColor = "rgb(57, 112, 151)";
-        startBtn.style.color = "rgb(57, 112, 151)";
-        setTime(0.1 * 60);
-        setPomodoro(false)
+        handleButton(15, false, 'START', 'blue')
       }}>Long Break</button>
+        {/* Timer */}
       <Counter play={play} time={time} setTime={setTime} counting={counting} />
       <button onClick={handleTime} className="start-btn">{action}</button>
       <div className="count">

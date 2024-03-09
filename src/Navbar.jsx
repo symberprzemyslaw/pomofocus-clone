@@ -1,10 +1,12 @@
+import logo from "./assets/icon-white2.png"
+
 const Navbar = () => {
     return ( 
         <>
         <nav>
             <div className="logo">
-                <img src="./src/assets/icon-white2.png"></img>
-                <h2>Pomofocus</h2>
+                <img src={logo}></img>
+                <h2>Pomoclone</h2>
             </div>
             <div>
                 <button>Report</button>
