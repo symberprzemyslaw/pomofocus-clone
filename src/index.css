@@ -92,6 +92,11 @@ button:hover {
   letter-spacing: 2px;
 }
 
+.start-btn:active {
+  transform: translateY(4px);
+  box-shadow: none;
+}
+
 .reset-btn {
   background: none;
 }
@@ -133,7 +138,7 @@ button:hover {
   color: black;
   background-color: white;
   border-radius: 3px;
-  border-left: 5px black solid;
+  border-left: 5px rgb(251, 177, 41) solid;
   padding-bottom: 0 !important;
 }
 
@@ -142,5 +147,8 @@ button:hover {
 }
 
 .single-task button {
-  color: black;
+  color: white;
+  background-color: rgb(251, 177, 41);
+  padding: 10px;
 }
+

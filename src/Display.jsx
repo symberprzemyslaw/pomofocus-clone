@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Counter from "./Counter";
 import ring from './assets/ring.mp3';
+import tick from './assets/tick.mp3';
 
 const Display = () => {
   const [time, setTime] = useState(25 * 60);
@@ -8,11 +9,17 @@ const Display = () => {
   const [count, setCount] = useState(0);
   const [counting, setCounting] = useState(false);
   const [isPomodoroSet, setPomodoro] = useState(true);
-   // const [fill, setFill] = useState(0)
+  const [timeOut, setTimeOut] = useState(25);
+  const [fillPercent, setFillPercent] = useState(100)
+  
 
   const container = document.querySelector(".container");
   const startBtn = document.querySelector(".start-btn")
+
+
+
   const play = () => new Audio(ring).play();
+  const tickSound = () => new Audio(tick).play();
 
   //the main screen should return to pomodoro
   //and after pomodoro should return to short brake
@@ -31,7 +38,7 @@ const Display = () => {
     } else {
       setAction('START');
     }
-
+    tickSound()
     setCounting((prevCounting) => !prevCounting);
   };
   //this function will handle the time for the pomodoro, short brake and long brake
@@ -52,6 +59,9 @@ const Display = () => {
       container.style.backgroundColor = "rgb(57, 112, 151)";
       startBtn.style.color = "rgb(57, 112, 151)";
     }
+    setTimeOut(time)
+    document.querySelector('.fill').style.width = `100%`
+
   }
 
   useEffect(() => {
@@ -86,7 +96,7 @@ const Display = () => {
         handleButton(15, false, 'START', 'blue')
       }}>Long Break</button>
         {/* Timer */}
-      <Counter play={play} time={time} setTime={setTime} counting={counting} />
+      <Counter play={play} time={time} setTime={setTime} counting={counting} timeOut={timeOut} setFillPercent={setFillPercent} fillPercent={fillPercent}/>
       <button onClick={handleTime} className="start-btn">{action}</button>
       <div className="count">
         <p>
