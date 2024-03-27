@@ -11,21 +11,11 @@ const Display = () => {
   const [isPomodoroSet, setPomodoro] = useState(true);
   const [timeOut, setTimeOut] = useState(25);
   const [fillPercent, setFillPercent] = useState(100)
-  
-
   const container = document.querySelector(".container");
   const startBtn = document.querySelector(".start-btn")
-
-
-
   const play = () => new Audio(ring).play();
   const tickSound = () => new Audio(tick).play();
-
-  //the main screen should return to pomodoro
-  //and after pomodoro should return to short brake
-  //if pomodoro counter is @ 2 === 0 it should return to long brake
-  
-  
+//this function reset the timer
   const reset = () => {
     document.querySelector('.fill').style.width = `100%`
     setCounting(false);
@@ -38,6 +28,7 @@ const Display = () => {
     }
 
   };
+  //this function handle the start and pause button
   const handleTime = () => {
     if (action === 'START') {
       setAction('PAUSE');
@@ -70,7 +61,7 @@ const Display = () => {
     setTimeOut(time)
 
   }
-
+  //this function updates count and reset the timer
   useEffect(() => {
     if (time === 0 && isPomodoroSet) {
       play()
