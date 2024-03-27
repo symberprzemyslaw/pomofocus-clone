@@ -31,6 +31,7 @@ const Display = () => {
     setTime(25 * 60)
     container.style.backgroundColor = "rgb(186, 73, 73)"
     startBtn.style.color = "rgb(186, 73, 73)";
+    document.querySelector('.fill').style.width = `100%`
   };
   const handleTime = () => {
     if (action === 'START') {
