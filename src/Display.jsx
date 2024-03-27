@@ -25,13 +25,18 @@ const Display = () => {
   //and after pomodoro should return to short brake
   //if pomodoro counter is @ 2 === 0 it should return to long brake
   
+  
   const reset = () => {
+    document.querySelector('.fill').style.width = `100%`
     setCounting(false);
     setAction('START');
     setTime(25 * 60)
-    container.style.backgroundColor = "rgb(186, 73, 73)"
-    startBtn.style.color = "rgb(186, 73, 73)";
-    document.querySelector('.fill').style.width = `100%`
+    if (count % 2 === 0 && count !== 0) {
+      handleButton(15, false, 'START', 'blue')
+    } else {
+      handleButton(5, false, 'START', 'green')
+    }
+
   };
   const handleTime = () => {
     if (action === 'START') {
@@ -42,8 +47,10 @@ const Display = () => {
     tickSound()
     setCounting((prevCounting) => !prevCounting);
   };
-  //this function will handle the time for the pomodoro, short brake and long brake
+
+  //this function handle the time for the pomodoro, short brake and long brake
   const handleButton = (time, pomodoro, action, color) => {
+    document.querySelector('.fill').style.width = `100%`
     setTime(time * 60);
     setPomodoro(pomodoro)
     setCounting(false)
@@ -61,7 +68,6 @@ const Display = () => {
       startBtn.style.color = "rgb(57, 112, 151)";
     }
     setTimeOut(time)
-    document.querySelector('.fill').style.width = `100%`
 
   }
 
